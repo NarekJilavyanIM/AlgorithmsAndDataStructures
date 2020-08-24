@@ -12,10 +12,6 @@ UTILS = Utils()
 def parse_arguments():
     """
     This method parses arguments passed from command line.
-
-    This method parses arguments passed from command line.
-    NOTE: arguments priorities are the following:
-      --data_structure=all
     """
 
     formatter = argparse.RawTextHelpFormatter
