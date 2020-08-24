@@ -74,7 +74,7 @@ Below is the comprehensive command to execute an from the command line:
 
 Below are the most used runnig commands examples:
 
-    $ python runner.py
+    $ python runner.py -d_s all
     $ python runner.py -d_s stack
     $ python runner.py -sorting_a all
     $ python runner.py -sorting_a quickSort
