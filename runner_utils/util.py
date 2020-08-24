@@ -46,9 +46,9 @@ class Utils:
         self.run_searching_algorithm_command = \
             "g++ ./Algorithms/Searching/{algorithm}.cpp -o ./Algorithms/Searching/{algorithm}.out; ./Algorithms/Searching/{algorithm}.out"
         self.run_list_command = \
-            "g++ ./DataStructures/{data_structure}/main.cpp ./DataStructures/{data_structure}/{file_data_structure}.cpp -o ./DataStructures/{data_structure}/main.out & ./DataStructures/{data_structure}/main.out"
+            "g++ ./DataStructures/{data_structure}/main.cpp ./DataStructures/{data_structure}/{file_data_structure}.cpp -o ./DataStructures/{data_structure}/main.out; ./DataStructures/{data_structure}/main.out"
         self.run_depending_to_list_command = \
-            "g++ ./DataStructures/{data_structure}/{file_data_structure}.cpp ./DataStructures/DoubleLinkedList/doubleLinkedList.cpp ./DataStructures/{data_structure}/main.cpp -o ./DataStructures/{data_structure}/main.out & ./DataStructures/{data_structure}/main.out"
+            "g++ ./DataStructures/{data_structure}/{file_data_structure}.cpp ./DataStructures/DoubleLinkedList/doubleLinkedList.cpp ./DataStructures/{data_structure}/main.cpp -o ./DataStructures/{data_structure}/main.out; ./DataStructures/{data_structure}/main.out"
 
         self.data_structures = [
             self.singleLinkedList_key,
