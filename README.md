@@ -20,7 +20,6 @@
 
     .
     ├── Algorithms
-    │   ├── Searching
     │   └── Sorting
     │       ├── BubbleSort.cpp
     │       ├── InsertionSort.cpp
