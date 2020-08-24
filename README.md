@@ -20,6 +20,12 @@
 
     .
     ├── Algorithms
+    │   ├── Searching
+    │   │   ├── BinarySearch.cpp
+    │   │   ├── InterpolationSearch.cpp
+    │   │   ├── JumpSearch.cpp
+    │   │   ├── LinearSearch.cpp
+    │   │   └── TernarySearch.cpp
     │   └── Sorting
     │       ├── BubbleSort.cpp
     │       ├── InsertionSort.cpp
@@ -56,13 +62,15 @@
 	- also all parameters are listed under ***'./runner_utils/options.py'*** module
 2. __./DataStructures/<__STRUCTURE__>__ folder contains implementation of <__STRUCTURE__>  
 3. __./Algorithms/Sorting/<__ALGORITHM__>.cpp__ file contains implementation of <__ALGORITHM__> sorting algoritm
+4. __./Algorithms/Searching/<__ALGORITHM__>.cpp__ file contains implementation of <__ALGORITHM__> searching algoritm
 
 ## tests_execution
 Below is the comprehensive command to execute an from the command line:
 
 	$ python runner.py \
         --data_structure all \
-        --sorting_algorithm all
+        --sorting_algorithm all \
+        --searching_algorithm all
 
 Below are the most used runnig commands examples:
 
@@ -70,3 +78,5 @@ Below are the most used runnig commands examples:
     $ python runner.py -d_s stack
     $ python runner.py -sorting_a all
     $ python runner.py -sorting_a quickSort
+    $ python runner.py -searching_a all
+    $ python runner.py -searching_a binarySearch

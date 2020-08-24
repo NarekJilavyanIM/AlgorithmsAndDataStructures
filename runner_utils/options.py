@@ -27,7 +27,7 @@ def parse_arguments():
     platform_group.add_argument("--{}".format(UTILS.structure_key),
                                 "-d_s",
                                 type=str,
-                                default="all",
+                                default=None,
                                 choices=UTILS.choices[UTILS.structure_key],
                                 help=UTILS.helpers[UTILS.structure_key],
                                 metavar='')
@@ -37,6 +37,13 @@ def parse_arguments():
                                 default=None,
                                 choices=UTILS.choices[UTILS.sorting_key],
                                 help=UTILS.helpers[UTILS.sorting_key],
+                                metavar='')
+    platform_group.add_argument("--{}".format(UTILS.searching_key),
+                                "-searching_a",
+                                type=str,
+                                default=None,
+                                choices=UTILS.choices[UTILS.searching_key],
+                                help=UTILS.helpers[UTILS.searching_key],
                                 metavar='')
 
     parsed_arguments = parser.parse_args()
