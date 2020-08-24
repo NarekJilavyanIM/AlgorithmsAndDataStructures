@@ -12,6 +12,7 @@ class Utils:
 
     def __init__(self):
         self.structure_key = "data_structure"
+        self.sorting_key = "sorting_algorithm"
         self.file_data_structure_key = "file_data_structure"
         self.singleLinkedList_key = "singleLinkedList"
         self.doubleLinkedList_key = "doubleLinkedList"
@@ -19,11 +20,22 @@ class Utils:
         self.stack_key = "stack"
         self.queue_key = "queue"
         self.all_key = "all"
+        self.quick_sort_key = "quickSort"
+        self.bubble_sort_key = "bubbleSort"
+        self.insertion_sort_key = "insertionSort"
+        self.merge_sort_key = "mergeSort"
+        self.selection_sort_key = "selectionSort"
 
-        self.log_for_test_start = (
+        self.log_for_data_structure_test_start = (
                 """\n\n==========>"""
                 """\t{data_structure}\t"""
                 """<==========\n\n""")
+
+        self.log_for_algorithm_test_start = (
+                """\n\n==========>"""
+                """\t{algorithm}\t"""
+                """<==========\n\n""")
+        self.run_sorting_algorithm_command = "g++ ./Algorithms/Sorting/{algorithm}.cpp -o ./Algorithms/Sorting/{algorithm}.out & ./Algorithms/Sorting/{algorithm}.out"
         self.run_list_command = "g++ ./DataStructures/{data_structure}/main.cpp ./DataStructures/{data_structure}/{file_data_structure}.cpp -o ./DataStructures/{data_structure}/main.out & ./DataStructures/{data_structure}/main.out"
         self.run_depending_to_list_command = "g++ ./DataStructures/{data_structure}/{file_data_structure}.cpp ./DataStructures/DoubleLinkedList/doubleLinkedList.cpp ./DataStructures/{data_structure}/main.cpp -o ./DataStructures/{data_structure}/main.out & ./DataStructures/{data_structure}/main.out"
 
@@ -32,6 +44,14 @@ class Utils:
             self.doubleLinkedList_key,
             self.stack_key,
             self.queue_key
+        ]
+
+        self.sorting_algorithms = [
+            self.quick_sort_key,
+            self.bubble_sort_key,
+            self.insertion_sort_key,
+            self.merge_sort_key,
+            self.selection_sort_key
         ]
         self.data_structures_info = {
             self.singleLinkedList_key : {
@@ -55,16 +75,47 @@ class Utils:
                 self.file_data_structure_key : "queue"
             }
         }
+        self.sorting_algorithms_info = {
+            self.quick_sort_key : {
+                self.command_key : self.run_sorting_algorithm_command,
+                self.sorting_key : "QuickSort"
+            },
+            self.bubble_sort_key : {
+                self.command_key : self.run_sorting_algorithm_command,
+                self.sorting_key : "BubbleSort"
+            },
+            self.insertion_sort_key : {
+                self.command_key : self.run_sorting_algorithm_command,
+                self.sorting_key : "InsertionSort"
+            },
+            self.merge_sort_key : {
+                self.command_key : self.run_sorting_algorithm_command,
+                self.sorting_key : "MergeSort"
+            },
+            self.selection_sort_key : {
+                self.command_key : self.run_sorting_algorithm_command,
+                self.sorting_key : "SelectionSort"
+            }
+        }
         # the following are helpers messages for the arguments parser
         self.helpers = {
             self.structure_key: (
-                """A type of structure to run the automation against (comma-delimited):"""
+                """A type of data structure to run the automation against (comma-delimited):"""
                 """\n\tsingleLinkedList"""
                 """\n\tdoubleLinkedList"""
                 """\n\tstack"""
                 """\n\tqueue"""
                 """\n\tall"""
                 """\n\t(Default=all)"""),
+            self.sorting_key : (
+                """A type of sorting algorithm to run the automation against (comma-delimited):"""
+                """\n\tquickSort"""
+                """\n\tbubbleSort"""
+                """\n\tinsertionSort"""
+                """\n\tmergeSort"""
+                """\n\tselectionSort"""
+                """\n\tall"""
+                """\n\t(Default=None)""")
         }
         # the following are choices for the arguments parser
         self.choices = {
@@ -75,4 +126,12 @@ class Utils:
                 self.queue_key,
                 self.all_key
             ],
+            self.sorting_key: [
+                self.quick_sort_key,
+                self.bubble_sort_key,
+                self.insertion_sort_key,
+                self.merge_sort_key,
+                self.selection_sort_key,
+                self.all_key
+            ]
         }

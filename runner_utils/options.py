@@ -31,6 +31,13 @@ def parse_arguments():
                                 choices=UTILS.choices[UTILS.structure_key],
                                 help=UTILS.helpers[UTILS.structure_key],
                                 metavar='')
+    platform_group.add_argument("--{}".format(UTILS.sorting_key),
+                                "-sorting_a",
+                                type=str,
+                                default=None,
+                                choices=UTILS.choices[UTILS.sorting_key],
+                                help=UTILS.helpers[UTILS.sorting_key],
+                                metavar='')
 
     parsed_arguments = parser.parse_args()
 
