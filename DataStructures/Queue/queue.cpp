@@ -2,20 +2,31 @@
 #include "../DoubleLinkedList/doubleLinkedList.hpp"
 #include "queue.hpp"
 
-void Queue::push(int value) {
+void Queue::enqueue(int value) {
     this->list->add(value);
 }
 
-int Queue::top() {
-    return this->list->first->value;
+int Queue::peek() {
+    int value;
+    if(this->list->first) {
+        value = this->list->first->value;
+    } else {
+        throw std::out_of_range("Called peek() in empty queue");
+    }
+    return value;
 }
 
 int Queue::length() {
     return this->list->length;
 }
 
-int Queue::pop() {
-    int value = this->list->first->value;
+int Queue::dequeue() {
+    int value;
+    if(this->list->first) {
+        value = this->list->first->value;
+    } else {
+        throw std::out_of_range("Called dequeue() in empty queue");
+    }
     this->list->removeFirst();
     return value;
 }

@@ -32,6 +32,8 @@ SingleLinkedList::~SingleLinkedList() {
 int SingleLinkedList::getFirst() {
     if(this->first != NULL) {
         return this->first->value;
+    } else  {
+        throw std::out_of_range("Called getFirst() in empty list");
     }
 }
 
@@ -39,6 +41,8 @@ int SingleLinkedList::getFirst() {
 int SingleLinkedList::getLast() {
     if(this->last != NULL) {
         return this->last->value;
+    } else  {
+        throw std::out_of_range("Called getLast() in empty list");
     }
 }
 
@@ -50,6 +54,8 @@ int SingleLinkedList::get(int index) {
             tempNodePointer = tempNodePointer->next;
         }
         return tempNodePointer->value;
+    } else  {
+        throw std::out_of_range("Called get(int index) in empty list");
     }
 }
 
@@ -95,7 +101,9 @@ void SingleLinkedList::removeFirst() {
 	    delete this->first;
         this->first = temp;
         length--;
-	}
+	} else  {
+        throw std::out_of_range("Called removeFirst() in empty list");
+    }
 }
 
 
@@ -109,7 +117,9 @@ void SingleLinkedList::removeLast() {
         this->last = temproryNodePointer;
         this->last->next = NULL;
         length--;
-	}
+	} else  {
+        throw std::out_of_range("Called removeLast() in empty list");
+    }
 }
 
 
@@ -123,7 +133,9 @@ void SingleLinkedList::remove(int index) {
         tempNodePointer->next = removeNodePointer->next;
         delete removeNodePointer;
         length--;
-	}
+	} else  {
+        throw std::out_of_range("Called remove(int index) in empty list");
+    }
 }
 
 

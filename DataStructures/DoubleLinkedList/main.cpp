@@ -1,9 +1,10 @@
 #include "doubleLinkedList.hpp"
+#include <stdexcept>
 
 int main()
 {
 
-    // create single linked list
+    // create doouble linked list
     //     the index starts from 1
     DoubleLinkedList list;
 
@@ -19,7 +20,7 @@ int main()
     std::cout << "length : " << list.length << std::endl;
     std::cout << "isEmpty : " << list.isEmpty() << std::endl;
 
-    // print results of 
+    // print results of
     //     print()
     //     getFirst()
     //     get(index)
@@ -35,7 +36,7 @@ int main()
     // add element to list with index
     //     add with index 1 ( first )
     //     add with index length + 1
-    //     add with random index ( 0 < index <= length+1 ) 
+    //     add with random index ( 0 < index <= length+1 )
 
     std::cout << "list : ";
     list.print();
@@ -92,4 +93,3 @@ int main()
 
     return 0;
 }
-

@@ -6,12 +6,11 @@
 class Queue {
     private:
         DoubleLinkedList* list;
-
     public:
-        void push(int value);
+        void enqueue(int value);     
+        int dequeue();
+        int peek();
         int length();
-        int top();
-        int pop();
         bool isEmpty();
         void print();
 

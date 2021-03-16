@@ -7,7 +7,13 @@ void Stack::push(int value) {
 }
 
 int Stack::top() {
-    return this->list->last->value;
+    int value;
+    if(this->list->last) {
+        value = this->list->last->value;
+    } else {
+        throw std::out_of_range("Called top() in empty stack");
+    }
+    return value;
 }
 
 int Stack::length() {
@@ -15,7 +21,12 @@ int Stack::length() {
 }
 
 int Stack::pop() {
-    int value = this->list->last->value;
+    int value;
+    if(this->list->last) {
+        value = this->list->last->value;
+    } else {
+        throw std::out_of_range("Called pop() in empty stack");
+    }
     this->list->removeLast();
     return value;
 }

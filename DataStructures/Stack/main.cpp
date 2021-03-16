@@ -2,7 +2,7 @@
 #include "stack.hpp"
 int main() {
 
-    // create single linked list
+    // create stack
 	Stack stack;
 
     std::cout << "length : " << stack.length() << std::endl;

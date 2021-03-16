@@ -1,5 +1,7 @@
 #include <iostream>
 #include "doubleLinkedList.hpp"
+#include <string>
+#include <stdexcept>
 
 DoubleLinkedList::DoubleLinkedList(DoubleLinkedList& initialList) {
     this->length = 0;
@@ -25,12 +27,16 @@ DoubleLinkedList::~DoubleLinkedList() {
 int DoubleLinkedList::getFirst() {
     if(this->first != NULL) {
         return this->first->value;
+    } else  {
+        throw std::out_of_range("Called getFirst() in empty list");
     }
 }
 
 int DoubleLinkedList::getLast() {
     if(this->last != NULL) {
         return this->last->value;
+    } else  {
+        throw std::out_of_range("Called getLast() in empty list");
     }
 }
 
@@ -41,6 +47,8 @@ int DoubleLinkedList::get(int index) {
             temproryNodePointer = temproryNodePointer->next;
         }
         return temproryNodePointer->value;
+    } else  {
+        throw std::out_of_range("Called get(int index) in empty list");
     }
 }
 
@@ -90,6 +98,8 @@ void DoubleLinkedList::removeFirst() {
         length--;
 	} else if (this->length == 1) {
       	    this->removeSingleNode();
+    } else  {
+        throw std::out_of_range("Called removeFirst() in empty list");
     }
 }
 
@@ -102,7 +112,9 @@ void DoubleLinkedList::removeLast() {
         length--;
 	} else if (this->length == 1) {
 	    this->removeSingleNode();
-	}
+	} else  {
+        throw std::out_of_range("Called removeLast() in empty list");
+    }
 }
 
 void DoubleLinkedList::remove(int index) {
@@ -116,7 +128,9 @@ void DoubleLinkedList::remove(int index) {
         temproryNodePointer->next->prev = temproryNodePointer;
         delete removeNodePointer;
         length--;
-	}
+	} else  {
+        throw std::out_of_range("Called remove(int index) in empty list");
+    }
 }
 
 bool DoubleLinkedList::isEmpty() {
